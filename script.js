@@ -26,6 +26,9 @@ renderGrid(20, 10)
 
 renderFigure(0, 4, figures.O)
 
+let intervalId = setInterval(move, 1500)
+
+
 function renderGrid(rowCount, columnCount) {
   for (let j = 0; j < rowCount; j++) {
     for (let i = 0; i < columnCount; i++) {
@@ -35,7 +38,7 @@ function renderGrid(rowCount, columnCount) {
 }
 
 function renderFigure(row, column, cells) {
-  ctx.fillStyle = 'orange'
+  ctx.fillStyle = getColor()
 
   for (const cell of cells) {
     const x = pad + (column + cell[0]) * (size + gap)
@@ -46,4 +49,12 @@ function renderFigure(row, column, cells) {
   }
 }
 
+function getColor() {
+  const colors = ['orange', 'blue', 'cyan', 'green', 'purple', 'red', 'yellow', 'magenta', 'seaGreen', 'navy', 'violet', 'maroon', 'teal', 'pink', 'gold', 'fuchsia', 'lime', 'olive', 'aqua', 'indigo', 'brown', 'salmon', 'sandybrown', 'crimson']
+  
+  return colors[Math.floor(Math.random() * colors.length)]
+}
 
+function move(figure) {
+  
+}
